@@ -43,11 +43,7 @@ nav {
     gap: 20px;
 } 
 
-.form-section { 
-    flex: 1; 
-    width: 100px;
-    text-align: left; 
-} 
+
 
 h1 { 
     margin-top: 0px; 
@@ -56,90 +52,6 @@ h1 {
     text-align: center; 
     font-size: 36px; /* Enlarged the title */
 } 
-
-.form-group { 
-    margin-bottom: 20px; 
-} 
-
-.form-group label { 
-    display: block; 
-    color: #fff; 
-    margin-bottom: 5px; 
-    font-size: 16px; 
-} 
-
-.form-group input, 
-.form-group select { 
-    width: 100%; 
-    max-width: 300px; 
-    padding: 10px; 
-    border: none; 
-    border-radius: 5px; 
-    box-sizing: border-box; 
-} 
-
-.form-group-terms { 
-    display: flex;  
-    gap: 10px; /* Adds space between the checkbox and label */
-} 
-
-.form-group .terms input[type="checkbox"] { 
-    margin: 0; 
-    width: auto; 
-    height: 18px; /* Adjusted height for consistent appearance */
-} 
-
-.form-group .terms label { 
-    margin: 0; 
-    color: #fff; 
-    font-size: 14px; 
-}
-
-.submit-btn { 
-    width: 100%; 
-    max-width: 150px; 
-    padding: 10px; 
-    background-color: #fff; 
-    border: none; 
-    border-radius: 10px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    display: block; 
-    margin: 20px auto 0; 
-} 
-
-.login-link { 
-    text-align: center; 
-    margin-top: 10px; 
-} 
-
-.login-link a { 
-    color: #fff; 
-    text-decoration: none; 
-} 
-
-.login-link a:hover { 
-    text-decoration: underline; 
-} 
-
-.image-section { 
-    width: 100%;
-    max-width: 300px; 
-    height: auto; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-} 
-
-.image-section img { 
-    width: 700px;
-    height: 700px;
-    margin-right: 200px;
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 5px; 
-
-}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
@@ -158,11 +70,6 @@ h1 {
         padding: 20px; 
     }
 
-    .form-section, 
-    .image-section { 
-        width: 100%; 
-        max-width: none; 
-    }
 }
 
 @media (max-width: 480px) {
@@ -182,40 +89,10 @@ h1 {
         font-size: 14px; 
     }
 
-    .form-group input, 
-    .form-group select { 
-        padding: 8px; 
-    }
-
-    .submit-btn { 
-        font-size: 14px; 
-        padding: 8px; 
-    }
-}
-@media (max-width: 560px){
-    .image-section img { 
-        width: 400px;
-        height: 400px;
-        max-width: 100%; 
-        height: auto; 
-        border-radius: 5px; 
-        margin-left: 200px;
-    
-    }
-    .image-section { 
-        width: 100%;
-        max-width: 300px; 
-        height: auto; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-    } 
-    
 }
 
 
-
-/* homepage cssssssssssssssssssssssssssssssssssssssssssssssssss */
+/* employerdashboard csssssssssssssssssssss */
 
 .nav-links a { 
     color: #fff; 
@@ -226,7 +103,6 @@ h1 {
     text-decoration: underline;
 }
 
-/* employerdashboard csssssssssssssssssssss */
 /* Dashboard Container */
 .dashboard-container {
     display: flex;
