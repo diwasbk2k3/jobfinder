@@ -133,6 +133,13 @@ h1 {
     height: 50px;
 }
 
+.img-and-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px; /* Add spacing between the image and the title */
+}
+
 .jobListDiv {
     width: 80%;
     height: 150vh;
@@ -152,6 +159,8 @@ h1 {
     color: #333;
     margin: 0;
 }
+
+
 
 
 /* Styling for search bar container */
@@ -237,73 +246,32 @@ h1 {
     .jobListDiv {
         padding: 15px;  /* Adjust padding on very small screens */
     }
-}
+    .search-bar{
+        margin-left: 20px;
+        display: flex;
 
-/* LOGIN PAGE CSSSSSSSSSSSSS */
-.main-container-login { 
-    background-color: #3b4a6b; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    width: 90%; 
-    max-width: 1000px; 
-    padding: 30px; 
-    box-sizing: border-box; 
-    margin: 20px auto; 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 20px;
-} 
+    }
+    .search-input{
+        width: 120px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
 
-/* employerdashboard csssssssssssssssssssss */
-/* Dashboard Container */
-.dashboard-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px; /* Space between the two divs */
-}
-
-/* Big Div */
-.big-div {
-    flex: 3; /* Takes up more space */
-    background-color: #b3bbe9; /* Matching color */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 500px; /* Example height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Small Div */
-.small-div {
-    flex: 1; /* Takes up less space */
-    background-color: #b3bbe9; /* Matching color */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 500px; /* Example height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column; /* Stack divs vertically */
-        align-items: center;
+    }
+    .search-btn{
+        width: 140px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 
-    .big-div, .small-div {
-        width: 100%; /* Full width on smaller screens */
-        height: auto; /* Adjust height */
+}
+
+@media (max-width:430px) {
+    .img-and-title{
+        margin-left:0px ; 
     }
+    .search-bar{
+        margin-right: 40px;
+    }
+    
+    
 }
