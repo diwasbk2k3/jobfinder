@@ -1,0 +1,79 @@
+
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+} 
+
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #3b4a6b; 
+    padding: 15px 25px; 
+} 
+
+.logo { 
+    width: 80px; 
+} 
+
+nav { 
+    display: flex; 
+    align-items: center; 
+} 
+
+.home-link { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 16px; 
+    margin-right: 20px; 
+} .dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px; /* Space between the two divs */
+}
+
+/* Big Div */
+.big-div {
+    flex: 3; /* Takes up more space */
+    background-color: #b3bbe9; /* Matching color */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Example height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Small Div */
+.small-div {
+    flex: 1; /* Takes up less space */
+    background-color: #b3bbe9; /* Matching color */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Example height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack divs vertically */
+        align-items: center;
+    }
+
+    .big-div, .small-div {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height */
+    }
+}
