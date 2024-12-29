@@ -1,0 +1,311 @@
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+} 
+
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #3b4a6b; 
+    padding: 15px 25px; 
+} 
+
+.logo { 
+    width: 80px; 
+} 
+
+nav { 
+    display: flex; 
+    align-items: center; 
+} 
+
+.home-link { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 16px; 
+    margin-right: 20px; 
+} 
+
+.main-container { 
+    background-color: #3b4a6b; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 90%; 
+    max-width: 1000px; 
+    padding: 30px; 
+    box-sizing: border-box; 
+    margin: 20px auto; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px;
+} 
+
+.form-section { 
+    flex: 1; 
+    width: 100px;
+    text-align: left; 
+} 
+
+h1 { 
+    margin-top: 0px; 
+    margin-bottom: 30px; 
+    color: #fff; 
+    text-align: center; 
+    font-size: 36px; /* Enlarged the title */
+} 
+
+.form-group { 
+    margin-bottom: 20px; 
+} 
+
+.form-group label { 
+    display: block; 
+    color: #fff; 
+    margin-bottom: 5px; 
+    font-size: 16px; 
+} 
+
+.form-group input, 
+.form-group select { 
+    width: 100%; 
+    max-width: 300px; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+} 
+
+.form-group-terms { 
+    display: flex;  
+    gap: 10px; /* Adds space between the checkbox and label */
+} 
+
+.form-group .terms input[type="checkbox"] { 
+    margin: 0; 
+    width: auto; 
+    height: 18px; /* Adjusted height for consistent appearance */
+} 
+
+.form-group .terms label { 
+    margin: 0; 
+    color: #fff; 
+    font-size: 14px; 
+}
+
+.submit-btn { 
+    width: 100%; 
+    max-width: 150px; 
+    padding: 10px; 
+    background-color: #fff; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: block; 
+    margin: 20px auto 0; 
+    padding-left: 4px;
+} 
+
+.login-link { 
+    text-align: center; 
+    margin-top: 10px; 
+} 
+
+.login-link a { 
+    color: #fff; 
+    text-decoration: none; 
+} 
+
+.login-link a:hover { 
+    text-decoration: underline; 
+} 
+
+.image-section { 
+    width: 100%;
+    max-width: 300px; 
+    height: auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+
+.image-section img { 
+    width: 700px;
+    height: 700px;
+    margin-right: 200px;
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .header { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .home-link { 
+        margin-right: 0; 
+        margin-top: 10px; 
+    }
+
+    .main-container { 
+        flex-direction: column; 
+        padding: 20px; 
+    }
+
+    .form-section, 
+    .image-section { 
+        width: 100%; 
+        max-width: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { 
+        font-size: 28px; 
+    }
+
+    .header { 
+        padding: 10px; 
+    }
+
+    .logo { 
+        width: 60px; 
+    }
+
+    .home-link { 
+        font-size: 14px; 
+    }
+
+    .form-group input, 
+    .form-group select { 
+        padding: 8px; 
+    }
+
+    .submit-btn { 
+        font-size: 14px; 
+        padding: 8px; 
+    }
+}
+@media (max-width: 560px){
+    .image-section img { 
+        width: 400px;
+        height: 400px;
+        max-width: 100%; 
+        height: auto; 
+        border-radius: 5px; 
+        margin-left: 200px;
+    
+    }
+    .image-section { 
+        width: 100%;
+        max-width: 300px; 
+        height: auto; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    } 
+    
+}
+
+
+
+/* homepage cssssssssssssssssssssssssssssssssssssssssssssssssss */
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    padding: 30px;
+} 
+.nav-links .empAccLink{
+    text-decoration: underline;
+}
+
+
+/* Title and icon container */
+.top-jobs-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 165px;
+}
+
+.top-jobs-title {
+    font-size: 36px;
+    color: #3b4a6b; /* Same color as header background */
+    font-style: italic;
+    margin-left: 10px; /* Space between icon and title */
+}
+
+.topJobsIconClass {
+    width: 50px;
+    height: 50px;
+}
+
+.jobListDiv {
+    width: 80%;
+    height: 150vh;
+    background-color: #b3bbe9;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.jobListDiv p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .jobListDiv {
+        width: 80%;  /* Full width on smaller screens */
+        height: 150vh;  /* Auto height */
+    }
+    .top-jobs-container{
+        margin-left: 60px;
+    }
+    .topJobsIconClass{
+        width: 40px;
+        height: 40px;
+    }
+    .top-jobs-title{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jobListDiv {
+        padding: 15px;  /* Adjust padding on very small screens */
+    }
+}
+
+/* LOGIN PAGE CSSSSSSSSSSSSS */
+.main-container-login { 
+    background-color: #3b4a6b; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 90%; 
+    max-width: 1000px; 
+    padding: 30px; 
+    box-sizing: border-box; 
+    margin: 20px auto; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px;
+}
