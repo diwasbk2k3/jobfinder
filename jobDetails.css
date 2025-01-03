@@ -16,17 +16,21 @@ body {
     width: 80px; 
 } 
 
-nav { 
+.nav-links { 
     display: flex; 
     align-items: center; 
 } 
 
-.home-link { 
+.nav-links a { 
     color: white; 
     text-decoration: none; 
     font-size: 16px; 
     margin-right: 20px; 
 } 
+
+.nav-links .empAccLink {
+    text-decoration: underline;
+}
 
 .main-container { 
     background-color: #3b4a6b; 
@@ -40,7 +44,7 @@ nav {
     display: flex; 
     flex-wrap: wrap; 
     justify-content: space-between; 
-    gap: 20px;
+    gap: 20px; 
 } 
 
 h1 { 
@@ -48,56 +52,87 @@ h1 {
     margin-bottom: 30px; 
     color: #fff; 
     text-align: center; 
-    font-size: 36px; /* Enlarged the title */
+    font-size: 36px;
 } 
 
-
-.nav-links a { 
-    color: #fff; 
-    text-decoration: none; 
-    padding: 30px;
-} 
-.nav-links .empAccLink{
-    text-decoration: underline;
-}
-
-/* Dashboard Container */
 .dashboard-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px; /* Space between the two divs */
-}
+    display: flex; 
+    justify-content: space-between; 
+    align-items: stretch;  /* Changed from flex-start to stretch */
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 1200px; 
+    gap: 10px; /* Reduced gap */
+} 
 
-/* Big Div */
+.job-section, .apply-section {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+} 
+
 .big-div {
-    flex: 3; /* Takes up more space */
-    background-color: #b3bbe9; /* Matching color */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 500px; /* Example height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-color: #b3bbe9; 
+    border-radius: 15px; 
+    padding: 10px; /* Reduced padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    flex-grow: 1;  /* Ensure they grow to the same height */
+    height: 100%;  /* Added height: 100%; */
+} 
+
+.small-div { 
+    background-color: #b3bbe9; 
+    border-radius: 15px; 
+    padding: 10px; /* Reduced padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    flex-direction: column; 
+    overflow-y: auto; 
+    flex-grow: 1; /* Ensure they grow to the same height */
+    height: 100%;  /* Added height: 100%; */
 }
 
-/* Small Div */
-.small-div {
-    flex: 1; /* Takes up less space */
-    background-color: #b3bbe9; /* Matching color */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 500px; /* Example height */
+/* Form Styles */
+form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
+label {
+    margin-top: 5px; /* Reduced margin */
+}
 
+input, textarea {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 10px; /* Reduced margin */
+    padding: 10px 20px;
+    background-color: #3b4a6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2a3450;
+}

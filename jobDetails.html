@@ -18,13 +18,36 @@
 
     <!-- Dashboard Container -->
     <div class="dashboard-container">
-        <!-- Big Div -->
-        <div class="big-div">
-            <p>Big div content goes here.</p>
+        <!-- Job Details Section -->
+        <div class="job-section">
+            <h2>JOB DETAILS</h2>
+            <div class="big-div">
+                <p>Big div content goes here.</p>
+            </div>
         </div>
-        <!-- Small Div -->
-        <div class="small-div">
-            <p>Small div content goes here.</p>
+        <!-- Apply Here Section -->
+        <div class="apply-section">
+            <h2>APPLY HERE</h2>
+            <div class="small-div">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    
+                    <label for="contact">Contact:</label>
+                    <input type="text" id="contact" name="contact" required><br><br>
+                    
+                    <label for="resume">Upload Your Resume Here:</label>
+                    <input type="file" id="resume" name="resume" required><br><br>
+                    
+                    <label for="queries">Additional Queries:</label><br>
+                    <textarea id="queries" name="queries" rows="4" cols="50"></textarea><br><br>
+                    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>
