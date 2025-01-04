@@ -124,15 +124,102 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    margin-top: 10px; /* Reduced margin */
+    margin-top: 10px; 
     padding: 10px 20px;
     background-color: #3b4a6b;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 40%;
+    margin: 0 auto;
 }
 
 input[type="submit"]:hover {
     background-color: #2a3450;
+}
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        gap: 20px; /* Increase gap for better spacing */
+    }
+    .job-section, .apply-section {
+        flex: none; /* Allow sections to take up full width */
+        width: 100%;
+    }
+    .main-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+    h1 {
+        font-size: 28px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        text-align: center;
+    }
+    .logo {
+        width: 60px; /* Smaller logo on mobile */
+    }
+    .nav-links {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+        margin-top: 10px;
+    }
+    .nav-links a {
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .dashboard-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%; /* Full width for mobile */
+    }
+    .big-div, .small-div {
+        padding: 15px; /* Slightly larger padding for readability on small screens */
+    }
+    input[type="submit"] {
+        width: 80%; /* Make submit button wider on mobile */
+    }
+    h1 {
+        font-size: 24px; /* Reduce heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px; /* Adjust header padding for smaller screens */
+    }
+    .logo {
+        width: 50px; /* Smaller logo for very small screens */
+    }
+    .nav-links {
+        font-size: 12px; /* Smaller text for nav links */
+    }
+    .main-container {
+        width: 100%; /* Ensure container takes full width */
+        padding: 15px; /* Reduce padding */
+    }
+    .dashboard-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .job-section, .apply-section {
+        width: 100%; /* Ensure sections take full width */
+    }
+    h1 {
+        font-size: 20px; /* Make the title smaller */
+    }
+    input[type="submit"] {
+        width: 90%; /* Make submit button even larger */
+    }
 }
