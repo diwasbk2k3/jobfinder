@@ -1,104 +1,103 @@
-body { 
-    margin: 0; 
-    font-family: Arial, sans-serif; 
-    background-color: #f0f0f0; 
-} 
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 
-.header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    background-color: #3b4a6b; 
-    padding: 15px 25px; 
-} 
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b4a6b;
+    padding: 15px 25px;
+}
 
-.logo { 
-    width: 80px; 
-} 
+.logo {
+    width: 80px;
+}
 
-.nav-links { 
-    display: flex; 
-    align-items: center; 
-} 
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-.nav-links a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 16px; 
-    margin-right: 20px; 
-} 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+}
 
 .nav-links .empAccLink {
     text-decoration: underline;
 }
 
-.main-container { 
-    background-color: #3b4a6b; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    width: 90%; 
-    max-width: 1000px; 
-    padding: 30px; 
-    box-sizing: border-box; 
-    margin: 20px auto; 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 20px; 
-} 
+/* Transparent Background Section */
+.background-container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3); /* Transparency effect */
+    background-image: url('R.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+}
 
-h1 { 
-    margin-top: 0px; 
-    margin-bottom: 30px; 
-    color: #fff; 
-    text-align: center; 
-    font-size: 36px;
-} 
+/* Main Container with Content */
+.main-container {
+    background-color: rgb(255, 255, 255); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1500px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
 
+
+/* Dashboard Container Styles */
 .dashboard-container {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: stretch;  /* Changed from flex-start to stretch */
-    margin: 20px auto; 
-    width: 90%; 
-    max-width: 1200px; 
-    gap: 10px; /* Reduced gap */
-    margin-bottom: 150px;
-} 
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+    gap: 20px;
+    width: 100%;
+}
 
-.job-section, .apply-section {
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
+.job-section {
+    width: 70%; /* Adjust this percentage as needed */
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-} 
+}
 
-.big-div {
-    background-color: #b3bbe9; 
-    border-radius: 15px; 
-    padding: 10px; /* Reduced padding */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    flex-grow: 1;  /* Ensure they grow to the same height */
-    height: 100%;  /* Added height: 100%; */
-} 
+.apply-section {
+    width: 30%; /* Adjust this to fit the rest of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-.small-div { 
-    background-color: #b3bbe9; 
-    border-radius: 15px; 
-    padding: 10px; /* Reduced padding */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    flex-direction: column; 
-    overflow-y: auto; 
-    flex-grow: 1; /* Ensure they grow to the same height */
-    height: 100%;  /* Added height: 100%; */
+
+.big-div, .small-div {
+    background-color: #b3bbe9;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
 }
 
 /* Form Styles */
@@ -110,7 +109,7 @@ form {
 }
 
 label {
-    margin-top: 5px; /* Reduced margin */
+    margin-top: 5px;
 }
 
 input, textarea {
@@ -125,7 +124,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    margin-top: 10px; 
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #3b4a6b;
     color: white;
@@ -140,19 +139,19 @@ input[type="submit"]:hover {
     background-color: #2a3450;
 }
 
-/* Footer Styling */
+/* Footer Styles */
 .footer {
     background-color: #3b4a6b;
     color: white;
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    margin-top: auto;  /* Push footer to the bottom */
-    width: 100%;
-    height: 150px;
+    margin-top: auto;
+    width: 98.2%;
+    height: 91px;
 }
 
-/* Footer Links Styling */
+/* Footer Links Styles */
 .footer a {
     color: #b3bbe9;
     text-decoration: none;
@@ -164,37 +163,34 @@ input[type="submit"]:hover {
     color: white;
 }
 
-
-
-
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .dashboard-container {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
-        gap: 20px; /* Increase gap for better spacing */
+        flex-direction: column;
+        gap: 20px;
     }
     .job-section, .apply-section {
-        flex: none; /* Allow sections to take up full width */
+        flex: none;
         width: 100%;
     }
     .main-container {
-        padding: 20px; /* Reduce padding for smaller screens */
+        padding: 20px;
     }
     h1 {
-        font-size: 28px; /* Reduce font size */
+        font-size: 28px;
     }
 }
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; /* Stack logo and nav links vertically */
+        flex-direction: column;
         text-align: center;
     }
     .logo {
-        width: 60px; /* Smaller logo on mobile */
+        width: 60px;
     }
     .nav-links {
-        flex-direction: column; /* Stack navigation links vertically */
+        flex-direction: column;
         align-items: center;
         margin-top: 10px;
     }
@@ -206,44 +202,37 @@ input[type="submit"]:hover {
     .dashboard-container {
         flex-direction: column;
         gap: 20px;
-        width: 100%; /* Full width for mobile */
-    }
-    .big-div, .small-div {
-        padding: 15px; /* Slightly larger padding for readability on small screens */
     }
     input[type="submit"] {
-        width: 80%; /* Make submit button wider on mobile */
+        width: 80%;
     }
     h1 {
-        font-size: 24px; /* Reduce heading size */
+        font-size: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .header {
-        padding: 10px 15px; /* Adjust header padding for smaller screens */
+        padding: 10px 15px;
     }
     .logo {
-        width: 50px; /* Smaller logo for very small screens */
+        width: 50px;
     }
     .nav-links {
-        font-size: 12px; /* Smaller text for nav links */
+        font-size: 12px;
     }
     .main-container {
-        width: 100%; /* Ensure container takes full width */
-        padding: 15px; /* Reduce padding */
+        width: 100%;
+        padding: 15px;
     }
     .dashboard-container {
         flex-direction: column;
         gap: 10px;
     }
-    .job-section, .apply-section {
-        width: 100%; /* Ensure sections take full width */
+    input[type="submit"] {
+        width: 90%;
     }
     h1 {
-        font-size: 20px; /* Make the title smaller */
-    }
-    input[type="submit"] {
-        width: 90%; /* Make submit button even larger */
+        font-size: 20px;
     }
 }
