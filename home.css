@@ -176,6 +176,7 @@ body {
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100vh;
 }
 
 .job-listing p {
@@ -190,6 +191,7 @@ body {
     text-align: center;
     padding: 20px;
     font-size: 14px;
+    height: 100px;
 }
 
 .footer a {
