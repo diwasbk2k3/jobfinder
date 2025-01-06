@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Header</title>
+    <title>Job Finder - Home</title>
     <link rel="stylesheet" href="./home.css">
 </head>
 <body>
-    <div class="header">
-        <img src="./logo.png" alt="Logo" class="logo">
-        <nav class="nav-links">
-            <a href="./home.html">HOME</a>
-            <a href="./signup.html" class="empAccLink">CREATE YOUR EMPLOYER ACCOUNT</a>
-        </nav>
-    </div>
-
-    <!-- Flexbox container for title and icon -->
-    <div class="top-jobs-container">
-        <div class = "img-and-title">
-        <img src="topJobsIcon.png" class="topJobsIconClass"/>
-        <h2 class="top-jobs-title">TOP JOBS</h2>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="./logo.png" alt="Logo" class="logo">
+            <h1 class="site-title">Job Finder</h1>
         </div>
-        <!-- Search bar and button -->
-    <div class="search-bar">
-        <input type="text" placeholder="Search for jobs..." class="search-input">
-        <button class="search-btn">Search</button>
-    </div>
+        <nav class="nav-links">
+            <a href="./home.html">Home</a>
+            <a href="./signup.html" class="empAccLink">Create Your Employer Account</a>
+        </nav>
+    </header>
 
-    </div>
-    
-    <div class="jobListDiv">
-        <p>Here is where the job listings will be displayed!</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Find Your Dream Job Today</h2>
+            <p>Explore top job opportunities tailored to your skills and preferences.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for jobs..." class="search-input">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+        <img src="./hero-image.jpg" alt="Hero Image" class="hero-image">
+    </section>
+
+    <!-- Top Jobs Section -->
+    <section class="top-jobs-section">
+        <div class="section-header">
+            <img src="./topJobsIcon.png" class="topJobsIconClass" alt="Top Jobs Icon">
+            <h2>Top Jobs</h2>
+        </div>
+        <div class="job-listing">
+            <p>Job listings will be displayed here soon!</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Job Finder. All Rights Reserved.</p>
+        <p>Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+    </footer>
 </body>
 </html>
