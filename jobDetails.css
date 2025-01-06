@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -30,14 +29,10 @@ body {
     margin-right: 20px;
 }
 
-.nav-links .empAccLink {
-    text-decoration: underline;
-}
-
 /* Transparent Background Section */
 .background-container {
     position: relative;
-    background: rgba(0, 0, 0, 0.3); /* Transparency effect */
+    background: rgba(0, 0, 0, 0.1); 
     background-image: url('R.jpeg'); 
     background-size: cover;
     background-position: center;
@@ -61,7 +56,6 @@ body {
     gap: 20px;
 }
 
-
 /* Dashboard Container Styles */
 .dashboard-container {
     display: flex;
@@ -73,14 +67,14 @@ body {
 }
 
 .job-section {
-    width: 70%; /* Adjust this percentage as needed */
+    width: 70%; 
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .apply-section {
-    width: 30%; /* Adjust this to fit the rest of the space */
+    width: 30%; 
     display: flex;
     flex-direction: column;
     gap: 10px;
