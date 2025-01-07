@@ -102,6 +102,66 @@ h1 {
 .nav-links .empAccLink{
     text-decoration: underline;
 }
+
+
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    background: linear-gradient(135deg, rgba(179, 187, 233, 0.8), rgba(59, 74, 107, 0.8)), url('./background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2, .hero-content p {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInFromLeft 1.2s ease-out forwards;
+}
+
+.hero-content p {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-image {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomIn 1.5s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
 .posted-jobs-container {
     display: flex;
     align-items: center;
@@ -140,6 +200,7 @@ h1 {
     width: 90%;
     max-width: 1200px;
     gap: 20px; /* Space between the two divs */
+    margin-bottom: 100px;
 }
 
 .big-div, .small-div {
@@ -273,4 +334,65 @@ h1 {
     margin: 5px 0;
     font-size: 16px;
     color: #9e3838;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #3b4a6b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    height: 100px;
+}
+
+.footer a {
+    color: #b3bbe9;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    .topJobsIconClass {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .search-input {
+        width: 180px;
+    }
 }
