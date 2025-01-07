@@ -198,9 +198,11 @@ h1 {
 
 /* Top Jobs Section Styling */
 .posted-jobs-section{
+    
     padding: 50px 10%;
-    background:url('bg-image.jpg');
+    /* background:url('bg-image.jpg'); */
     background-size: cover;
+    background: linear-gradient(90deg,rgb(132, 132, 194),rgb(19, 27, 88));
     text-align: center;
 
 }
@@ -222,7 +224,7 @@ h1 {
 .posted-jobs-section h2 {
     font-size: 28px;
     margin: 0;
-    color: #3b4a6b;
+    color: #ffffff;
 }
 
 /* Dashboard Container */
@@ -236,7 +238,7 @@ h1 {
     gap: 20px; /* Space between the two divs */
     margin-bottom: 100px;
 
-    background: linear-gradient(rgba(59, 74, 107, 0.8), rgba(179, 187, 233, 0.8));
+    background: linear-gradient(rgba(59, 74, 107, 0.2), rgba(179, 187, 233, 0.2));
     background-size: cover;
     background-position: center;
     border-radius: 15px;
@@ -284,7 +286,7 @@ h1 {
     justify-content: left;
     align-items: left;
     padding: 10px;
-    background: #ffffff;
+    background: hsla(0, 3%, 81%, 0.759);
     border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
