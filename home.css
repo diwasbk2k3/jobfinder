@@ -1,277 +1,246 @@
-body { 
-    margin: 0; 
-    font-family: Arial, sans-serif; 
-    background-color: #f0f0f0; 
-} 
-
-.header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    background-color: #3b4a6b; 
-    padding: 15px 25px; 
-} 
-
-.logo { 
-    width: 80px; 
-} 
-
-nav { 
-    display: flex; 
-    align-items: center; 
-} 
-
-.home-link { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 16px; 
-    margin-right: 20px; 
-} 
-
-.main-container { 
-    background-color: #3b4a6b; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    width: 90%; 
-    max-width: 1000px; 
-    padding: 30px; 
-    box-sizing: border-box; 
-    margin: 20px auto; 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 20px;
-} 
-
-.form-section { 
-    flex: 1; 
-    width: 100px;
-    text-align: left; 
-} 
-
-h1 { 
-    margin-top: 0px; 
-    margin-bottom: 30px; 
-    color: #fff; 
-    text-align: center; 
-    font-size: 36px; /* Enlarged the title */
-} 
-
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .header { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-
-    .home-link { 
-        margin-right: 0; 
-        margin-top: 10px; 
-    }
-
-    .main-container { 
-        flex-direction: column; 
-        padding: 20px; 
-    }
-
-
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-@media (max-width: 480px) {
-    h1 { 
-        font-size: 28px; 
-    }
-
-    .header { 
-        padding: 10px; 
-    }
-
-    .logo { 
-        width: 60px; 
-    }
-
-    .home-link { 
-        font-size: 14px; 
-    }
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b4a6b;
+    padding: 15px 25px;
+    color: white;
 }
 
-
-
-/* homepage cssssssssssssssssssssssssssssssssssssssssssssssssss */
-
-.nav-links a { 
-    color: #fff; 
-    text-decoration: none; 
-    padding: 30px;
-} 
-.nav-links .empAccLink{
-    text-decoration: underline;
-}
-
-
-/* Title and icon container */
-.top-jobs-container {
+.logo-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-top: 30px;
-    margin-left: 165px;
 }
 
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
 
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
 
-.top-jobs-title {
-    font-size: 36px;
-    color: #3b4a6b; /* Same color as header background */
-    font-style: italic;
-    margin-left: 10px; /* Space between icon and title */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b3bbe9;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    background: linear-gradient(135deg, rgba(179, 187, 233, 0.8), rgba(59, 74, 107, 0.8)), url('./background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2, .hero-content p {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInFromLeft 1.2s ease-out forwards;
+}
+
+.hero-content p {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 250px;
+    outline: none;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2a3751;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.search-btn:hover {
+    background-color: #1f2b45;
+}
+
+.hero-image {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomIn 1.5s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Top Jobs Section Styling */
+.top-jobs-section {
+    padding: 50px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .topJobsIconClass {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
 }
 
-.img-and-title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0px; /* Add spacing between the image and the title */
-}
-
-.jobListDiv {
-    width: 80%;
-    height: 150vh;
-    background-color: #b3bbe9;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.jobListDiv p {
-    font-size: 18px;
-    color: #333;
+.top-jobs-section h2 {
+    font-size: 28px;
     margin: 0;
+    color: #3b4a6b;
 }
 
-
-
-
-/* Styling for search bar container */
-.search-bar {
-    display: flex;
-    align-items: center;
-    margin-left: 20px; /* Space between title and search bar */
+.job-listing {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100vh;
 }
 
-/* Search input field */
-.search-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    width: 200px; /* Adjust width as needed */
-    outline: none;
+.job-listing p {
+    margin: 0;
+    font-size: 18px;
 }
 
-/* Search button */
-.search-btn {
-    padding: 10px 20px;
-    font-size: 16px;
+/* Footer Styling */
+.footer {
     background-color: #3b4a6b;
     color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    outline: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    height: 100px;
 }
 
-.search-btn:hover {
-    background-color: #2a3751; /* Slightly darker color on hover */
+.footer a {
+    color: #b3bbe9;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
 }
 
-/* Responsive adjustments */
+.footer a:hover {
+    color: white;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .search-bar {
-        margin-left: 10px;
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    .topJobsIconClass {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
     }
 
     .search-input {
-        width: 150px;
+        width: 180px;
     }
-}
-
-@media (max-width: 480px) {
-    .search-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-        margin-left: 0;
-    }
-
-    .search-input, .search-btn {
-        width: 100%;
-    }
-
-    .search-btn {
-        margin-top: 5px;
-    }
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .jobListDiv {
-        width: 80%;  /* Full width on smaller screens */
-        height: 150vh;  /* Auto height */
-    }
-    .top-jobs-container{
-        margin-left: 60px;
-    }
-    .topJobsIconClass{
-        width: 40px;
-        height: 40px;
-    }
-    .top-jobs-title{
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .jobListDiv {
-        padding: 15px;  /* Adjust padding on very small screens */
-    }
-    .search-bar{
-        margin-left: 20px;
-        display: flex;
-
-    }
-    .search-input{
-        width: 120px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-
-    }
-    .search-btn{
-        width: 140px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-
-}
-
-@media (max-width:430px) {
-    .img-and-title{
-        margin-left:0px ; 
-    }
-    .search-bar{
-        margin-right: 40px;
-    }
-    
-    
 }
