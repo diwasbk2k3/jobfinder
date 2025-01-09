@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b4a6b;
+    padding: 15px 25px;
+}
+
+.logo {
+    width: 80px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+/* Transparent Background Section */
+.background-container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.1); 
+    background-image: url('R.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+}
+
+/* Main Container with Content */
+.main-container {
+    background-color: rgb(255, 255, 255); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1500px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Dashboard Container Styles */
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+.job-section {
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.apply-section {
+    width: 30%; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.big-div, .small-div {
+    background-color: #b3bbe9;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    margin-top: 5px;
+}
+
+input, textarea {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3b4a6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+    margin: 0 auto;
+}
+
+input[type="submit"]:hover {
+    background-color: #2a3450;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #3b4a6b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+    width: 98.2%;
+    height: 91px;
+}
+
+/* Footer Links Styles */
+.footer a {
+    color: #b3bbe9;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .job-section, .apply-section {
+        flex: none;
+        width: 100%;
+    }
+    .main-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo {
+        width: 60px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .nav-links a {
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .dashboard-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    input[type="submit"] {
+        width: 80%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+    .logo {
+        width: 50px;
+    }
+    .nav-links {
+        font-size: 12px;
+    }
+    .main-container {
+        width: 100%;
+        padding: 15px;
+    }
+    .dashboard-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    input[type="submit"] {
+        width: 90%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
