@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Job - Hamro Job</title>
+  <link rel="stylesheet" href="jobPosting.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <nav class="nav-links">
+      <a href="./home.html">HOME</a>
+      <a href="./signup.html" class="logout">LOG OUT</a>
+    </nav>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-container">
+    <div class="form-container">
+      <h2>Post a New Job</h2>
+      <p>Fill out the form below to post a new job opening.</p>
+      <form action="#" method="POST">
+        <!-- Job Title -->
+        <label for="job-title">Job Title:</label>
+        <input type="text" id="job-title" name="job-title" placeholder="e.g., Software Engineer">
+
+        <!-- Company Name -->
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" name="company-name" placeholder="e.g., Tech Solutions Inc.">
+
+        <!-- Job Location -->
+        <label for="location">Job Location:</label>
+        <select id="location" name="location">
+          <option value="on site">On Site</option>  
+          <option value="remote">Remote</option>
+        </select>
+
+        <!-- Employment Type -->
+        <label>Employment Type:</label>
+        <div class="radio-group">
+          <label for="full-time">
+            <input type="radio" id="full-time" name="employment-type" value="full-time"> Full-time
+          </label>
+          <label for="part-time">
+            <input type="radio" id="part-time" name="employment-type" value="part-time"> Part-time
+          </label>
+          <label for="contract">
+            <input type="radio" id="contract" name="employment-type" value="contract"> Contract
+          </label>
+          <label for="internship">
+            <input type="radio" id="internship" name="employment-type" value="internship"> Internship
+          </label>
+        </div>
+
+        <!-- Salary Range -->
+        <label for="salary-range">Salary Range:</label>
+        <input type="number" id="min-salary" name="min-salary" placeholder="Min Salary">
+        <input type="number" id="max-salary" name="max-salary" placeholder="Max Salary">
+
+        <!-- Job Description -->
+        <label for="description">Job Description:</label>
+        <textarea id="description" name="description" placeholder="Provide a detailed job description, responsibilities, and expectations"></textarea>
+
+        <!-- Required Skills -->
+        <label for="skills">Required Skills:</label>
+        <input type="text" id="skills" name="skills" placeholder="e.g., Python, JavaScript">
+
+        <!-- Job Requirements -->
+        <label>Job Requirements:</label>
+        <div class="checkbox-group">
+          <label for="experience-required">
+            <input type="checkbox" id="experience-required" name="experience-required"> Experience Required
+          </label>
+          <label for="degree-required">
+            <input type="checkbox" id="degree-required" name="degree-required"> Degree Required
+          </label>
+        </div>
+
+        <!-- Application Deadline -->
+        <label for="deadline">Application Deadline:</label>
+        <input type="date" id="deadline" name="deadline">
+
+        <!-- Submit and Cancel buttons -->
+        <div class="buttons">
+          <button type="submit" class="submit-btn">Post Job</button>
+          <button type="reset" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 Hamro Job. All Rights Reserved.</p>
+    <p>Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
