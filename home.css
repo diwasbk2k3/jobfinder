@@ -244,3 +244,73 @@ body {
         width: 180px;
     }
 }
+/* Job Posting Card Styles */
+.job-postings-container {
+    display: grid; /* Enable grid layout */
+    column-gap: 50px; /* Space between columns */
+    row-gap: 50px; /* Space between rows */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto-fit cards in multiple columns, each at least 250px wide */
+    padding: 20px;
+    width: 100%; /* Ensures the container doesn't overflow */
+}
+
+.job-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Make the card width flexible */
+    max-width: 100%; /* Prevent card from exceeding container width */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.job-card .apply-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.job-card .apply-btn:hover {
+    background-color: #0056b3;
+}
+
+.job-card .location,
+.job-card .employment-type,
+.job-card .salary-range {
+    font-weight: bold;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .job-card {
+    
+    }}
