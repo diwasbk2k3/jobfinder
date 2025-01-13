@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const degreeRequired = document.getElementById("degree-required").checked;
         const deadline = document.getElementById("deadline").value;
 
+        if (!jobTitle || !companyName || !employmentType || !minSalary || !maxSalary || !description || !skills || !deadline) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+      
+          // Generate a unique job ID using the current timestamp
+          const jobId = `job-${new Date().getTime()}`;
+
         const jobPosting = {
             jobTitle,
             companyName,
