@@ -94,7 +94,6 @@ body {
     gap: 10px;
 }
 
-
 .big-div, .small-div {
     background-color: #b3bbe9;
     border-radius: 15px;
@@ -106,6 +105,12 @@ body {
     text-align: center;
     flex-grow: 1;
     height: 100%;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;  
+    resize: vertical;  
 }
 
 /* Form Styles */
@@ -128,7 +133,7 @@ input, textarea {
 }
 
 input[type="file"] {
-    padding: 5px;
+    padding: 10px;
 }
 
 input[type="submit"] {
