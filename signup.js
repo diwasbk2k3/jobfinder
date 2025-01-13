@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 validateField(contactInput, (v) => /^[0-9]{10}$/.test(v), "Enter a valid 10-digit contact number.");
                 break;
             case "pan-no":
-                validateField(panNoInput, (v) => /^[A-Z0-9]{10}$/.test(v), "Enter a valid PAN number.");
+                validateField(panNoInput, (v) => /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(v), "Enter a valid PAN number (e.g., ABCDE1234F).");
                 break;
             case "password":
             case "confirm-password":
