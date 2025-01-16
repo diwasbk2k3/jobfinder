@@ -32,8 +32,8 @@ body {
 /* Transparent Background Section */
 .background-container {
     position: relative;
-    background: rgba(0, 0, 0, 0.1); 
-    background-image: url('R.jpeg'); 
+    background: rgba(0, 0, 0, 0.1);
+    background-image: url('R.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body {
 
 /* Main Container with Content */
 .main-container {
-    background-color: rgb(255, 255, 255); 
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -51,36 +51,36 @@ body {
     box-sizing: border-box;
     margin: 20px auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 20px;
 }
 
 /* Dashboard Container Styles */
 .dashboard-container {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 20px;
+    justify-content: space-between; /* Ensures they are side by side */
+    align-items: flex-start; /* Align items to the start */
     gap: 20px;
     width: 100%;
 }
 
+/* Job Section */
 .job-section {
-    width: 70%; 
+    width: 70%; /* Make the job section 70% of the container */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Apply Section */
 .apply-section {
-    width: 30%; 
+    width: 30%; /* Make the apply section 30% of the container */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-
+/* Job Details Container */
 .job-details, .small-div {
     background-color: #b3bbe9;
     border-radius: 15px;
