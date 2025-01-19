@@ -15,35 +15,42 @@
   }
   
   /* Header Styling */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3b4a6b;
-    padding: 15px 25px;
-  }
-  
-  .logo {
-    width: 80px;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #ffd700;
-    text-decoration: underline;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3b4a6b;
+  padding: 15px 25px;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #b3bbe9;
+}
   
   /* Main Container */
   .main-container {
