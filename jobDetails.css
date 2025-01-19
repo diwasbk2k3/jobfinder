@@ -33,7 +33,7 @@ body {
 .background-container {
     position: relative;
     background: rgba(0, 0, 0, 0.1);
-    background-image: url('R.jpeg');
+    background-image: url('R.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body {
 
 /* Main Container with Content */
 .main-container {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(168, 187, 231, 0.79);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -51,7 +51,7 @@ body {
     box-sizing: border-box;
     margin: 20px auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -61,7 +61,7 @@ body {
     justify-content: space-between; /* Ensures they are side by side */
     align-items: flex-start; /* Align items to the start */
     gap: 20px;
-    width: 100%;
+    width: 70%;
 }
 
 /* Job Section */
@@ -70,6 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 /* Apply Section */
@@ -78,6 +79,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
 /* Job Details Container */
@@ -92,6 +94,7 @@ body {
     text-align: center;
     flex-grow: 1;
     height: 100%;
+    background-color: rgba(168, 187, 231, 0.79);
 }
 
 /* Form Styles */
@@ -111,6 +114,7 @@ input, textarea {
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 input[type="file"] {
@@ -142,7 +146,7 @@ input[type="submit"]:hover {
     font-size: 14px;
     margin-top: auto;
     width: 98.2%;
-    height: 91px;
+    height: auto;
 }
 
 /* Footer Links Styles */
@@ -162,9 +166,10 @@ input[type="submit"]:hover {
     .dashboard-container {
         flex-direction: column;
         gap: 20px;
+        width: 180%;
     }
-    .job-section, .apply-section {
-        flex: none;
+     .apply-section {
+        flex: column;
         width: 100%;
     }
     .main-container {
@@ -172,6 +177,15 @@ input[type="submit"]:hover {
     }
     h1 {
         font-size: 28px;
+    }
+}
+
+@media(max-width: 1100px){
+    .main-container{
+        flex-direction: column;
+    }
+    .dashboard-container{
+        width: auto;
     }
 }
 
