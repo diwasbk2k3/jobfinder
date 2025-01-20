@@ -97,7 +97,12 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .big-div, .small-div {
+=======
+/* Job Details Container */
+.job-details, .small-div {
+>>>>>>> origin/devA
 =======
 /* Job Details Container */
 .job-details, .small-div {
@@ -113,12 +118,15 @@ body {
     flex-grow: 1;
     height: 100%;
     background-color: rgba(168, 187, 231, 0.79);
+<<<<<<< HEAD
 }
 
 textarea {
     width: 100%;
     box-sizing: border-box;  
     resize: vertical;  
+=======
+>>>>>>> origin/devA
 }
 
 /* Form Styles */
