@@ -46,8 +46,8 @@ body {
 /* Transparent Background Section */
 .background-container {
     position: relative;
-    background: rgba(0, 0, 0, 0.1); 
-    background-image: url('R.jpeg'); 
+    background: rgba(0, 0, 0, 0.1);
+    background-image: url('R.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,7 +56,7 @@ body {
 
 /* Main Container with Content */
 .main-container {
-    background-color: rgb(255, 255, 255); 
+    background-color: rgba(168, 187, 231, 0.79);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -65,36 +65,48 @@ body {
     box-sizing: border-box;
     margin: 20px auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: row;
     gap: 20px;
 }
 
 /* Dashboard Container Styles */
 .dashboard-container {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 20px;
+    justify-content: space-between; /* Ensures they are side by side */
+    align-items: flex-start; /* Align items to the start */
     gap: 20px;
-    width: 100%;
+    width: 70%;
 }
 
+/* Job Section */
 .job-section {
-    width: 70%; 
+    width: 70%; /* Make the job section 70% of the container */
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
+/* Apply Section */
 .apply-section {
-    width: 30%; 
+    width: 30%; /* Make the apply section 30% of the container */
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .big-div, .small-div {
+=======
+/* Job Details Container */
+.job-details, .small-div {
+>>>>>>> origin/devA
+=======
+/* Job Details Container */
+.job-details, .small-div {
+>>>>>>> origin/devA
     background-color: #b3bbe9;
     border-radius: 15px;
     padding: 10px;
@@ -105,12 +117,16 @@ body {
     text-align: center;
     flex-grow: 1;
     height: 100%;
+    background-color: rgba(168, 187, 231, 0.79);
+<<<<<<< HEAD
 }
 
 textarea {
     width: 100%;
     box-sizing: border-box;  
     resize: vertical;  
+=======
+>>>>>>> origin/devA
 }
 
 /* Form Styles */
@@ -130,6 +146,7 @@ input, textarea {
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 input[type="file"] {
@@ -161,7 +178,7 @@ input[type="submit"]:hover {
     font-size: 14px;
     margin-top: auto;
     width: 98.2%;
-    height: 91px;
+    height: auto;
 }
 
 /* Footer Links Styles */
@@ -181,9 +198,10 @@ input[type="submit"]:hover {
     .dashboard-container {
         flex-direction: column;
         gap: 20px;
+        width: 180%;
     }
-    .job-section, .apply-section {
-        flex: none;
+     .apply-section {
+        flex: column;
         width: 100%;
     }
     .main-container {
@@ -191,6 +209,15 @@ input[type="submit"]:hover {
     }
     h1 {
         font-size: 28px;
+    }
+}
+
+@media(max-width: 1100px){
+    .main-container{
+        flex-direction: column;
+    }
+    .dashboard-container{
+        width: auto;
     }
 }
 
