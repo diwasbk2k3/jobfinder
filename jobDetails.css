@@ -1,3 +1,4 @@
+/* Body Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -42,7 +43,6 @@ body {
     color: #b3bbe9;
 }
 
-
 /* Transparent Background Section */
 .background-container {
     position: relative;
@@ -72,61 +72,28 @@ body {
 /* Dashboard Container Styles */
 .dashboard-container {
     display: flex;
-    justify-content: space-between; /* Ensures they are side by side */
-    align-items: flex-start; /* Align items to the start */
+    justify-content: space-between;
+    align-items: stretch; /* Ensure equal height */
     gap: 20px;
-    width: 70%;
+    width: 100%;
 }
 
 /* Job Section */
 .job-section {
-    width: 70%; /* Make the job section 70% of the container */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
+    width: 70%; /* Set width for job details */
+    background-color: rgba(168, 187, 231, 0.79);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Apply Section */
 .apply-section {
-    width: 30%; /* Make the apply section 30% of the container */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-.big-div, .small-div {
-=======
-/* Job Details Container */
-.job-details, .small-div {
->>>>>>> origin/devA
-=======
-/* Job Details Container */
-.job-details, .small-div {
->>>>>>> origin/devA
-    background-color: #b3bbe9;
+    width: 30%; /* Set width for apply section */
+    background-color: rgba(168, 187, 231, 0.79);
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-grow: 1;
-    height: 100%;
-    background-color: rgba(168, 187, 231, 0.79);
-<<<<<<< HEAD
-}
-
-textarea {
-    width: 100%;
-    box-sizing: border-box;  
-    resize: vertical;  
-=======
->>>>>>> origin/devA
 }
 
 /* Form Styles */
@@ -146,7 +113,8 @@ input, textarea {
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 10px;  
+    resize: vertical;
 }
 
 input[type="file"] {
@@ -176,12 +144,9 @@ input[type="submit"]:hover {
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    margin-top: auto;
-    width: 98.2%;
-    height: auto;
+    height: 110px;
 }
 
-/* Footer Links Styles */
 .footer a {
     color: #b3bbe9;
     text-decoration: none;
@@ -200,7 +165,7 @@ input[type="submit"]:hover {
         gap: 20px;
         width: 180%;
     }
-     .apply-section {
+    .apply-section {
         flex: column;
         width: 100%;
     }
@@ -212,7 +177,7 @@ input[type="submit"]:hover {
     }
 }
 
-@media(max-width: 1100px){
+@media (max-width: 1100px){
     .main-container{
         flex-direction: column;
     }
