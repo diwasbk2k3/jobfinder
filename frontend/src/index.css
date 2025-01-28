@@ -1,4 +1,13 @@
 :root {
-  color: black;
-  background-color: #ffffff;
+  --font-family: 'Arial', sans-serif; 
+  --background-color: #ffffff; 
+  --text-color: #000000;    
+}
+
+body {
+  font-family: var(--font-family); 
+  background-color: var(--background-color); 
+  color: var(--text-color);     
+  margin: 0;
+  padding: 0;
 }

@@ -1,9 +1,10 @@
+import Home from "./components/Home"
 
 function App() {
 
   return (
     <>
-      <h1>Job Finder</h1>
+      <Home/>
     </>
   )
 }
