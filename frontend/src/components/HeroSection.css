@@ -5,8 +5,8 @@
     align-items: center;
     width: 100%;
     padding: 0;
-    margin-top: 0; 
-    position: relative; 
+    margin-top: 0;
+    position: relative;
 }
 
 /* Hero Container */
@@ -16,8 +16,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    position: relative; 
-    z-index: 1; 
+    position: relative;
+    z-index: 1;
 }
 
 /* Add background image with low opacity using ::before */
@@ -31,29 +31,94 @@
     background-image: url('https://www.europelanguagejobs.com/uploads/posts/idiom.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.6; 
-    z-index: -1; 
+    opacity: 0.6;
+    z-index: -1;
 }
 
-.left-container {
-    flex: 1;
+/* Hero Content Animation */
+.hero-content {
     max-width: 50%;
-    padding-left: 20px; 
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInFromLeft 1.2s ease-out forwards;
 }
 
+/* Slide-in Animation for Hero Content */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Search Bar Fade-in Animation */
+.search-input {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.search-btn {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hero Image Zoom-in Animation */
+.hero-image-card {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 1.5s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Search container styling */
 .search-container {
     padding: 40px;
 }
 
 .search-container h2 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateX(-50px); /* Initially off-screen */
+    animation: slideInFromLeft 1.2s ease-out forwards;
+    animation-delay: 0.2s; /* Optional delay for effect */
 }
 
 .search-container p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 20px 0;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 15px 0;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateX(-50px); /* Initially off-screen */
+    animation: slideInFromLeft 1.2s ease-out forwards;
+    animation-delay: 0.4s; /* Optional delay for effect */
 }
 
 .search-bar {
@@ -68,37 +133,57 @@
     width: 250px;
     border: 2px solid #ccc;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .search-btn {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color:#b600e8;
+    background-color: #b600e8;
     color: whitesmoke;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-input:hover {
+    border-color: #b600e8;
 }
 
 .search-btn:hover {
-    background-color: #a019df; 
-}
-
-.right-container {
-    flex: 1;
-    max-width: 45%;
-    padding-right: 20px; 
-}
-
-.hero-image-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    transform: translateY(-5px);
+    background-color: #a019df;
 }
 
 .hero-image {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-image {
+        width: 70%; /* Make it a bit smaller on mobile */
+        height: auto;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container {
+        max-width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-image {
+        width: 90%;
+        height: auto;
+    }
 }
