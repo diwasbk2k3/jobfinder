@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css'; // Import the custom CSS file
+import logo from '../assets/logo.png';
 
 function Header() {
   return (
@@ -7,6 +8,7 @@ function Header() {
       <div className="container">
         {/* Logo Section */}
         <div className="logo">
+          <img src={logo} alt='logo' className="main-logo"></img>
           <span>HamroJobs</span>
         </div>
 
@@ -14,13 +16,13 @@ function Header() {
         <nav>
           <ul className="nav-links">
             <li>
-              <a href="/">HOME</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="/jobs">JOBS</a>
+              <a href="/jobs">Jobs</a>
             </li>
             <li>
-              <a href="/about-us">ABOUT US</a>
+              <a href="/about-us">About us</a>
             </li>
             <li>
               <a href="/login">Login</a>

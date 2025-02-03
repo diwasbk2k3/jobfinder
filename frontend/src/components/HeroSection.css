@@ -115,6 +115,13 @@
     color: rgba(255, 255, 255, 0.8);
     margin: 15px 0;
     line-height: 1.6;
+<<<<<<< HEAD
+=======
+    opacity: 0;
+    transform: translateX(-50px); /* Initially off-screen */
+    animation: slideInFromLeft 1.2s ease-out forwards;
+    animation-delay: 0.4s; /* Optional delay for effect */
+>>>>>>> origin/devA
 }
 
 .search-bar {
@@ -182,4 +189,8 @@
         width: 90%;
         height: auto;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/devA

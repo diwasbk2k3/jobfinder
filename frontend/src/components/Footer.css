@@ -1,0 +1,20 @@
+/* Footer Styling */
+.footer {
+    background-color: #3b4a6b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    height: 100px;
+}
+
+.footer a {
+    color: #b3bbe9;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
