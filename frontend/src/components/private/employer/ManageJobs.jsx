@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function ManageJobs() {
-  return (
-    <div>ManageJobs</div>
-  )
-}
-
-export default ManageJobs
-=======
 import React from 'react';
 
 function ManageJobs() {
@@ -56,4 +45,3 @@ function ManageJobs() {
 }
 
 export default ManageJobs;
->>>>>>> origin/devA

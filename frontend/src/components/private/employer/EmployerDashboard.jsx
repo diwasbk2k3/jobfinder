@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function EmployerDashboard() {
-  return (
-    <div>EmployerDashboard</div>
-  )
-}
-
-export default EmployerDashboard
-=======
 import React from 'react';
 
 function EmployerDashboard() {
@@ -40,4 +29,3 @@ function EmployerDashboard() {
 }
 
 export default EmployerDashboard;
->>>>>>> origin/devA

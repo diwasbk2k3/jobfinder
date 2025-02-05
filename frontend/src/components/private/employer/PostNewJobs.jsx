@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function PostNewJobs() {
-  return (
-    <div>PostNewJobs</div>
-  )
-}
-
-export default PostNewJobs
-=======
 import React, { useState } from "react";
 
 function PostNewJob() {
@@ -116,4 +105,3 @@ function PostNewJob() {
 }
 
 export default PostNewJob;
->>>>>>> origin/devA

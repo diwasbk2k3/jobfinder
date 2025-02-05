@@ -13,12 +13,9 @@ function EmployerNavbar() {
           <Link to="/employer/post-new-job" className="hover:text-purple-300">Post New Job</Link>
         </li>
         <li>
-<<<<<<< HEAD
-=======
           <Link to="/employer/manage-job" className="hover:text-purple-300">Manage Job</Link>
         </li>
         <li>
->>>>>>> origin/devA
           <Link to="/employer/view-applicant" className="hover:text-purple-300">View Applicants</Link>
         </li>
       </ul>

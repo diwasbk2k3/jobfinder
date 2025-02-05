@@ -11,10 +11,7 @@ import AppLayout from "./components/public/AppLayout";
 import EmployerLayout from "./components/private/employer/EmployerLayout";
 import EmployerDashboard from "./components/private/employer/EmployerDashboard";
 import PostNewJobs from "./components/private/employer/PostNewJobs";
-<<<<<<< HEAD
-=======
 import ManageJobs from "./components/private/employer/ManageJobs";
->>>>>>> origin/devA
 import ViewApplicants from "./components/private/employer/ViewApplicants";
 
 import AdminLayout from "./components/private/admin/AdminLayout";
@@ -44,10 +41,7 @@ function App() {
           <Route index element={<EmployerDashboard />} />
           <Route path="dashboard" element={<EmployerDashboard />} />
           <Route path="post-new-job" element={<PostNewJobs />} />
-<<<<<<< HEAD
-=======
           <Route path="manage-job" element={<ManageJobs />} />
->>>>>>> origin/devA
           <Route path="view-applicant" element={<ViewApplicants />} />
         </Route>
 
