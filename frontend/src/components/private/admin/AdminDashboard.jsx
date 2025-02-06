@@ -3,7 +3,7 @@ import React from 'react';
 const AdminDashboard = () => {
   // Placeholder data for total employers and total applications
   const totalEmployers = 245;
-  const totalApplications = 1876;
+  const totalApplicants = 1876;
 
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center p-5">
@@ -19,8 +19,8 @@ const AdminDashboard = () => {
 
           {/* Total Applications Card */}
           <div className="bg-gradient-to-r from-purple-500 to-pink-400 text-white p-6 rounded-lg shadow-lg flex flex-col items-center w-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
-            <h3 className="text-2xl font-semibold">Total Applications</h3>
-            <p className="text-4xl font-bold mt-2">{totalApplications}</p>
+            <h3 className="text-2xl font-semibold">Total Applicants</h3>
+            <p className="text-4xl font-bold mt-2">{totalApplicants}</p>
           </div>
         </div>
       </div>
