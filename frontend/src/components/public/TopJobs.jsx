@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const TopJobs = () => {
   const jobs = [
@@ -29,7 +29,7 @@ const TopJobs = () => {
               <p className="text-gray-600">Location: {job.location}</p>
               <p className="text-gray-600">Employment: {job.type}</p>
               <p className="text-gray-600">Salary: {job.salary}</p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Apply</button>
+              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"><Link to="/apply">Apply</Link></button>
             </div>
           ))}
         </div>

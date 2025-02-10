@@ -17,6 +17,7 @@ import ViewApplicants from "./components/private/employer/ViewApplicants";
 import AdminLayout from "./components/private/admin/AdminLayout";
 import AdminDashboard from "./components/private/admin/AdminDashboard";
 import ManageEmployer from "./components/private/admin/ManageEmployer";
+import ApplyNow from "./components/public/ApplyNow";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="jobs" element={<TopJobs />} />
+          <Route path="apply" element={<ApplyNow />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
