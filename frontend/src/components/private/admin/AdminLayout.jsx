@@ -1,11 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import AdminNabvar from './AdminNabvar'
+import AdminNavbar from './AdminNavbar'
 
 function AdminLayout() {
   return (
     <div>
-      <AdminNabvar/>
+      <AdminNavbar/>
       <Outlet/>
     </div>
   )
