@@ -21,7 +21,8 @@ function Login() {
           <form id="loginForm" className="space-y-8 m-8" noValidate>
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-gray-700 font-medium">Email</label>
+              <label htmlFor="email" c  
+               lassName="block text-gray-700 font-medium">Email</label>
               <input 
                 type="email" 
                 id="email" 
