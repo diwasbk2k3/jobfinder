@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import React from 'react';
 
 const AdminDashboard = () => {
@@ -31,20 +29,3 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-=======
-=======
->>>>>>> origin/devA
-import React from 'react'
-
-function AdminDashboard() {
-  return (
-    <div>AdminDashboard</div>
-  )
-}
-
-<<<<<<< HEAD
-export default AdminDashboard
->>>>>>> origin/devA
-=======
-export default AdminDashboard
->>>>>>> origin/devA
