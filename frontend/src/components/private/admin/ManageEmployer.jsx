@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 
 function ManageEmployer() {
@@ -50,6 +51,8 @@ function ManageEmployer() {
 
 export default ManageEmployer;
 =======
+=======
+>>>>>>> origin/devA
 import React from 'react'
 
 function ManageEmployer() {
@@ -58,5 +61,9 @@ function ManageEmployer() {
   )
 }
 
+<<<<<<< HEAD
+export default ManageEmployer
+>>>>>>> origin/devA
+=======
 export default ManageEmployer
 >>>>>>> origin/devA

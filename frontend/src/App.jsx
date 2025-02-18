@@ -27,6 +27,16 @@ import AdminLayout from "./components/private/admin/AdminLayout";
 import AdminDashboard from "./components/private/admin/AdminDashboard";
 import ManageEmployer from "./components/private/admin/ManageEmployer";
 
+import EmployerLayout from "./components/private/employer/EmployerLayout";
+import EmployerDashboard from "./components/private/employer/EmployerDashboard";
+import PostNewJobs from "./components/private/employer/PostNewJobs";
+import ManageJobs from "./components/private/employer/ManageJobs";
+import ViewApplicants from "./components/private/employer/ViewApplicants";
+
+import AdminLayout from "./components/private/admin/AdminLayout";
+import AdminDashboard from "./components/private/admin/AdminDashboard";
+import ManageEmployer from "./components/private/admin/ManageEmployer";
+
 function App() {
 
   return (
@@ -45,6 +55,11 @@ function App() {
           <Route path="admin/login" element={<AdminLogin />} />
         </Route>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+        {/* Employer routes */}
+>>>>>>> origin/devA
 =======
 
         {/* Employer routes */}
@@ -57,6 +72,11 @@ function App() {
           <Route path="view-applicant" element={<ViewApplicants />} />
         </Route>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+        {/* Admin routes */}
+>>>>>>> origin/devA
 =======
 
         {/* Admin routes */}
