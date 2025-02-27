@@ -71,7 +71,7 @@ function AdminLogin() {
             </button>
           </form>
           <div className="text-center mt-4">
-            <p className="text-gray-600">Go back to <Link to="/login" className="text-blue-600 font-medium hover:underline">Employer Login</Link></p>
+            <p className="text-gray-600">Go back to Employer Login? <Link to="/login" className="text-blue-600 font-medium hover:underline">Click Here</Link></p>
           </div>
         </div>
       </div>
