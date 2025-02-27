@@ -19,19 +19,6 @@ function Signup() {
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-800">Signup</h1>
           <form id="signupForm" className="space-y-6 m-8" noValidate>
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="block text-gray-700 font-medium">Full Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                placeholder="Enter your full name" 
-                required 
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            
             {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-gray-700 font-medium">Email</label>
@@ -45,14 +32,40 @@ function Signup() {
               />
             </div>
 
+            {/* Phone Field */}
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-medium">Phone</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="Enter your phone number" 
+                required 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-gray-700 font-medium">Password</label>
+              <label htmlFor="password" className="block text-gray-700 font-medium">Create Password</label>
               <input 
                 type="password" 
                 id="password" 
                 name="password" 
-                placeholder="Create a password" 
+                placeholder="Create a new password" 
+                required 
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            {/* Password Field */}
+            <div>
+              <label htmlFor="password" className="block text-gray-700 font-medium">Confirm Password</label>
+              <input 
+                type="password" 
+                id="confirmPassword" 
+                name="password" 
+                placeholder="Confirm new password" 
                 required 
                 className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
