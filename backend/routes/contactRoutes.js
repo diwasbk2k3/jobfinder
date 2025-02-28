@@ -12,5 +12,21 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Create a new contact
+router.post('/', async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+    // Validate the input fields
+    if (!name || !email || !phone || !message) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+    // Create a new contact
+    const newContact = await Contact.create({ name, email, phone, message });
+    res.status(201).json({
+      message: 'Message sent successfully',
+      contact: newContact,
+    });
+  } 
+});
 
 module.exports = router;
