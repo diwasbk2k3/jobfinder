@@ -57,5 +57,20 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Remove an employer by employer_id
+router.delete('/:employer_id', async (req, res) => {
+  const { employer_id } = req.params;
+  try {
+    const employer = await Employer.findOne({ where: { employer_id } });
+    if (!employer) {
+      return res.status(404).json({ error: 'Employer not found' });
+    }
+    await employer.destroy();
+    res.json({ message: `Employer with employer_id ${employer_id} deleted successfully.`, employer });
+  } catch (err) {
+    console.error('Error deleting employer:', err);
+    res.status(500).json({ error: 'Failed to delete employer' });
+  }
+});
 
 module.exports = router;
