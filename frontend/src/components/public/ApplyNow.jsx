@@ -32,7 +32,7 @@ const ApplyNow = () => {
         name: "",
         email: "",
         contact: "",
-        resume: null,
+        portfolio_link: "",
         queries: "",
       });
     }, 1500);
@@ -103,17 +103,17 @@ const ApplyNow = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-[#4a5568]">Resume</label>
+                <label className="text-sm font-medium text-[#4a5568]">Portfolio Link</label>
                 <input
-                  type="file"
-                  name="resume"
-                  accept=".pdf,.doc,.docx"
+                  type="link"
+                  name="link"
+                  placeholder="github/website link"
+                  value={formData.portfolio_link}
                   onChange={handleChange}
                   required
-                  className="h-11 bg-white/80 backdrop-blur-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-gradient-to-r file:from-[#9b87f5] file:to-[#8B5CF6] file:text-white hover:file:from-[#8B5CF6] hover:file:to-[#7C3AED] focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200"
+                  className="h-11 bg-white/80 backdrop-blur-sm focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200 text-black"
                 />
               </div>
-
               <div className="space-y-2">
                 <label className="text-sm font-medium text-[#4a5568]">Additional Information</label>
                 <textarea
