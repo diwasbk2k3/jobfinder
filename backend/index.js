@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const adminRoutes = require('./routes/adminRoutes');
 const employerRoutes = require('./routes/employerRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 
@@ -8,8 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());  // Parses incoming JSON requests
 
-
+// Routes
+app.use('/admins', adminRoutes);
 app.use('/employers', employerRoutes);
+app.use('/contacts', contactRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;

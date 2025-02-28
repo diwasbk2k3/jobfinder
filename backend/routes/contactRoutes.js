@@ -26,7 +26,10 @@ router.post('/', async (req, res) => {
       message: 'Message sent successfully',
       contact: newContact,
     });
-  } 
+  } catch (err) {
+    console.error('Error creating contact:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;
