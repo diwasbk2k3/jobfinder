@@ -38,4 +38,24 @@ router.post('/signup', async (req, res) => {
 });
 
 
+// Login route for employer login
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const employer = await Employer.findOne({ where: { email, password } });
+    if (employer) {
+      res.json({
+        message: 'Login successful',
+        employer_id: employer.employer_id,
+        email: employer.email
+      });
+    } else {
+      res.status(401).json({ error: 'Invalid email or password' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 module.exports = router;
