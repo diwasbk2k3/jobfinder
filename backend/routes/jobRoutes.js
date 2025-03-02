@@ -49,5 +49,37 @@ router.post('/create-jobs', async (req, res) => {
   }
 });
 
+// PUT Route: Update an existing job by job_id
+router.put('/:job_id', async (req, res) => {
+  try {
+    const { job_id } = req.params;
+    const { job_title,employer_id, owner, job_type, location, salary, skills, description, deadline, status } = req.body;
+    // Check if job exists
+    const job = await Job.findOne({ where: { job_id } });
+    if (!job) {
+      return res.status(404).json({ error: 'Job not found' });
+    }
+    // Update job details
+    job.job_title = job_title || job.job_title;
+    job.owner = owner || job.owner;
+    job.job_type = job_type || job.job_type;
+    job.location = location || job.location;
+    job.salary = salary || job.salary;
+    job.skills = skills || job.skills;
+    job.description = description || job.description;
+    job.deadline = deadline || job.deadline;
+    job.status = status || job.status;
+    // Save updated job
+    await job.save();
+    res.status(200).json({
+      message: 'Job updated successfully',
+      job,
+    });
+  } catch (err) {
+    console.error('Error updating job:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 module.exports = router;
