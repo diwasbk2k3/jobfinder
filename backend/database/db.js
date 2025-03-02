@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("jobfinder", "postgres", "Bk2k5@#$", {
+const sequelize = new Sequelize("postgres", "postgres", "root", {
   host: "localhost",
   dialect: "postgres",
 });
@@ -14,8 +14,7 @@ const connection = async () => {
   }
 };
 
-// Sync Models
-sequelize.sync({ alter: true }) // Automatically alter the tables to match the model definitions, without dropping them
+sequelize.sync({ alter: true })
   .then(() => {
     console.log('All models were synchronized successfully.');
   })
@@ -24,5 +23,4 @@ sequelize.sync({ alter: true }) // Automatically alter the tables to match the m
 });
 
 module.exports = sequelize;
-// Call the connection function
 connection();
