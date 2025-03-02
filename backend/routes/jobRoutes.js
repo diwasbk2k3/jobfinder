@@ -18,4 +18,36 @@ router.get('/', async (req, res) => {
   }
 });
 
+// POST Route: Create a new job
+router.post('/create-jobs', async (req, res) => {
+  try {
+    const { job_title,employer_id, owner, job_type, location, salary, skills, description, deadline, status } = req.body;
+    if (!job_title || !employer_id || !owner || !job_type || !location || !salary || !skills || !description || !deadline || !status) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+    const job_id = generateJobId();
+    const newJob = await Job.create({
+      job_id,
+      job_title,
+      employer_id,
+      owner,
+      job_type,
+      location,
+      salary,
+      skills,
+      description,
+      deadline,
+      status,
+    });
+    res.status(201).json({
+      message: 'Job created successfully',
+      job: newJob,
+    });
+  } catch (err) {
+    console.error('Error creating job:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 module.exports = router;
