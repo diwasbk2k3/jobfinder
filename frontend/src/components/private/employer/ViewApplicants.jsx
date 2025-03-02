@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function ViewApplicants() {
-  const applicants = [
-    { id: 1, name: 'John Doe', email: 'john@example.com' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-    { id: 3, name: 'Sam Wilson', email: 'sam@example.com' },
-    // Add more applicants as needed
-  ];
+  const [applicants, setApplicants] = useState([]);
+
+  useEffect(() => {
+    // Fetch employer_id from local storage
+    const employerId = localStorage.getItem('employer_id');
+
+    // Fetch applicant details from the server using Axios
+    const fetchApplicants = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/applicants');
+        const filteredApplicants = response.data.filter(applicant => applicant.employer_id === employerId);
+        setApplicants(filteredApplicants); // Set filtered applicants
+      } catch (error) {
+        console.error('Error fetching applicants:', error);
+      }
+    };
+
+    fetchApplicants();
+  }, []);
+
+  // Function to prepend https:// if missing
+  const getFullUrl = (url) => {
+    // Check if the URL already has 'http' or 'https' prefix
+    return url.startsWith('http') ? url : `https://${url}`;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-top justify-center p-5">
@@ -17,21 +37,31 @@ function ViewApplicants() {
             <tr>
               <th className="p-3 border border-gray-300 text-center">SN</th>
               <th className="p-3 border border-gray-300 text-center">Applicant Name</th>
+              <th className="p-3 border border-gray-300 text-center">Job Title</th>
               <th className="p-3 border border-gray-300 text-center">Email</th>
-              <th className="p-3 border border-gray-300 text-center">Action</th>
+              <th className="p-3 border border-gray-300 text-center">Phone</th>
+              <th className="p-3 border border-gray-300 text-center">Portfolio Link</th>
+              <th className="p-3 border border-gray-300 text-center">Additional Info</th>
             </tr>
           </thead>
           <tbody>
             {applicants.map((applicant, index) => (
-              <tr key={applicant.id}>
+              <tr key={applicant.applicant_id}>
                 <td className="p-3 border border-gray-300 text-center">{index + 1}</td>
                 <td className="p-3 border border-gray-300 text-center">{applicant.name}</td>
+                <td className="p-3 border border-gray-300 text-center">{applicant.job_title}</td>
                 <td className="p-3 border border-gray-300 text-center">{applicant.email}</td>
+                <td className="p-3 border border-gray-300 text-center">{applicant.phone}</td>
                 <td className="p-3 border border-gray-300 text-center">
-                  <button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:opacity-90 transition font-semibold shadow-md cursor-pointer">
-                    View More
-                  </button>
+                  <a
+                    href={getFullUrl(applicant.portfolio_link)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className='text-green-500 font-bold hover:text-green-600'>{applicant.portfolio_link}</p>
+                  </a>
                 </td>
+                <td className="p-3 border border-gray-300 text-center">{applicant.additional_info}</td>
               </tr>
             ))}
           </tbody>
