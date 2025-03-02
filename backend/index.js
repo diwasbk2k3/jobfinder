@@ -4,6 +4,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const employerRoutes = require('./routes/employerRoutes');
 const applicantRoutes = require('./routes/applicantRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use('/admins', adminRoutes);
 app.use('/employers', employerRoutes);
 app.use('/applicants', applicantRoutes);
 app.use('/contacts', contactRoutes);
+app.use('/jobs', jobRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
