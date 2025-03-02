@@ -81,5 +81,22 @@ router.put('/:job_id', async (req, res) => {
   }
 });
 
+// DELETE Route: Delete a job by job_id
+router.delete('/:job_id', async (req, res) => {
+  try {
+    const { job_id } = req.params;
+    // Check if job exists
+    const job = await Job.findOne({ where: { job_id } });
+    if (!job) {
+      return res.status(404).json({ error: 'Job not found' });
+    }
+    // Delete the job
+    await job.destroy();
+    res.status(200).json({ message: 'Job deleted successfully' });
+  } catch (err) {
+    console.error('Error deleting job:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 module.exports = router;
