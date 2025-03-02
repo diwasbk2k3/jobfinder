@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const adminRoutes = require('./routes/adminRoutes');
 const employerRoutes = require('./routes/employerRoutes');
+const applicantRoutes = require('./routes/applicantRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.json());  // Parses incoming JSON requests
 // Routes
 app.use('/admins', adminRoutes);
 app.use('/employers', employerRoutes);
+app.use('/applicants', applicantRoutes);
 app.use('/contacts', contactRoutes);
 
 // Start server
