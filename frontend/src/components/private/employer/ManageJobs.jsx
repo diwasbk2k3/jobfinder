@@ -213,7 +213,7 @@ function ManageJobs() {
                   <td className="p-3 border border-gray-300 text-center">
                     <button
                       onClick={() => handleEdit(job)}
-                      className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition font-semibold shadow-md cursor-pointer"
+                      className="bg-green-500 text-white py-2 mb-2 px-4 w-[120px] rounded-lg hover:bg-green-400 transition font-semibold shadow-md cursor-pointer"
                     >
                       Edit
                     </button>
