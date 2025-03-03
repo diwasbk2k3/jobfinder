@@ -1,41 +1,72 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useLocation } from "react-router-dom"; // Import useLocation
 
 const ApplyNow = () => {
+  const location = useLocation(); // Initialize useLocation
+  const job = location.state?.job; // Access job details from location.state
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
+    job_id: job ? job.job_id : "",
+    job_title: job ? job.job_title : "",
+    employer_id: job ? job.employer_id : "",
     name: "",
     email: "",
-    contact: "",
-    resume: null,
-    queries: "",
+    phone: "",
+    portfolio_link: "",
+    additional_info: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (job) {
+      console.log("Job data:", job);
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        job_id: job.job_id,
+        job_title: job.job_title,
+        employer_id: job.employer_id,
+      }));
+    } else {
+      console.error("No job data available");
+    }
+  }, [job]);
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "file" ? files[0] : value,
-    }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      await axios.post("http://localhost:5000/applicants", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
       alert("Application submitted successfully!");
-      setIsSubmitting(false);
       setFormData({
+        job_id: job ? job.job_id : "", 
+        job_title: job ? job.job_title : "", 
+        employer_id: job ? job.employer_id : "",
         name: "",
         email: "",
-        contact: "",
-        resume: null,
-        queries: "",
+        phone: "",
+        portfolio_link: "",
+        additional_info: "",
       });
-    }, 1500);
+
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      alert("Failed to submit application.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,11 +78,43 @@ const ApplyNow = () => {
             Job Details
           </span>
           <h2 className="text-2xl font-semibold text-[#1A1F2C] tracking-tight">
-            Position Overview
+            {job ? job.job_title : "Position Overview"}
           </h2>
           <div className="prose prose-sm max-w-none text-[#4a5568] space-y-4">
             <div className="rounded-xl bg-gradient-to-br from-[#f8f9fa] to-[#e5deff] p-6 shadow-sm border border-[#9b87f5]/20">
-              <p className="text-sm leading-relaxed">Content will be shown here...</p>
+              {job ? (
+                <>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Job ID:</strong> {job.job_id}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Owner:</strong> {job.owner}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Employment:</strong> {job.job_type}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Location:</strong> {job.location}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Salary:</strong> {job.salary}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Skills:</strong> {job.skills}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Deadline:</strong> {new Date(job.deadline).toISOString().split("T")[0]}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Status:</strong> {job.status}
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    <strong>Description:</strong> {job.description}
+                  </p>
+                </>
+              ) : (
+                <p className="text-sm leading-relaxed">No job details available.</p>
+              )}
             </div>
           </div>
         </div>
@@ -62,6 +125,10 @@ const ApplyNow = () => {
             Apply Now
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Hidden job_id and job_title fields */}
+            <input type="hidden" name="job_id" value={formData.job_id} />
+            <input type="hidden" name="job_title" value={formData.job_title} />
+
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-[#4a5568]">Full Name</label>
@@ -90,12 +157,12 @@ const ApplyNow = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-[#4a5568]">Contact Number</label>
+                <label className="text-sm font-medium text-[#4a5568]">phone Number</label>
                 <input
                   type="tel"
-                  name="contact"
+                  name="phone"
                   placeholder="Your phone number"
-                  value={formData.contact}
+                  value={formData.phone}
                   onChange={handleChange}
                   required
                   className="h-11 bg-white/80 backdrop-blur-sm focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200 text-black"
@@ -103,27 +170,30 @@ const ApplyNow = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-[#4a5568]">Resume</label>
+                <label className="text-sm font-medium text-[#4a5568]">Portfolio Link</label>
                 <input
-                  type="file"
-                  name="resume"
-                  accept=".pdf,.doc,.docx"
+                  type="text"
+                  name="portfolio_link"
+                  placeholder="github/website link"
+                  value={formData.portfolio_link}
                   onChange={handleChange}
                   required
-                  className="h-11 bg-white/80 backdrop-blur-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-gradient-to-r file:from-[#9b87f5] file:to-[#8B5CF6] file:text-white hover:file:from-[#8B5CF6] hover:file:to-[#7C3AED] focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200"
+                  className="h-11 bg-white/80 backdrop-blur-sm focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200 text-black"
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-[#4a5568]">Additional Information</label>
                 <textarea
-                  name="queries"
+                  name="additional_info" // This should match the form data field name
                   placeholder="Any questions or additional information?"
-                  value={formData.queries}
+                  value={formData.additional_info}
                   onChange={handleChange}
                   className="min-h-[120px] bg-white/80 backdrop-blur-sm focus:ring-2 focus:ring-[#9b87f5] transition-all w-full p-3 rounded-lg border border-gray-200 text-black resize-none"
                 ></textarea>
+
               </div>
+
             </div>
 
             <button
