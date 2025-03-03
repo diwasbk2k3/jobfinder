@@ -9,7 +9,6 @@ router.get('/admin-stats', async (req, res) => {
   try {
     // Get total number of employers
     const totalEmployers = await Employer.count();
-
     // Get total number of applicants
     const totalApplicants = await Applicant.count();
 
