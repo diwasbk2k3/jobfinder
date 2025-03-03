@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function ManageEmployer() {
-  const mockEmployees = [
-    { id: "E1057", name: "John Smith", email: "john@example.com" },
-    { id: "E2869", name: "Sarah Wilson", email: "sarah@example.com" },
-    { id: "E3203", name: "Mike Johnson", email: "mike@example.com" },
-  ];
+  const [employers, setEmployers] = useState([]);
 
-  const handleRemove = (id) => {
-    alert(`Employee ${id} has been removed.`);
+  // Fetch all employers
+  useEffect(() => {
+    fetchEmployers();
+  }, []);
+
+  const fetchEmployers = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/employers");
+      setEmployers(response.data);
+    } catch (error) {
+      console.error("Error fetching employers:", error);
+    }
+  };
+
+  // Delete employer
+  const handleDelete = async (employer_id) => {
+    if (!window.confirm("Are you sure you want to delete this employer?")) return;
+    
+    try {
+      await axios.delete(`http://localhost:5000/employers/${employer_id}`);
+      setEmployers(employers.filter((employer) => employer.employer_id !== employer_id));
+    } catch (error) {
+      console.error("Error deleting employer:", error);
+    }
   };
 
   return (
@@ -19,27 +38,35 @@ function ManageEmployer() {
           <thead>
             <tr>
               <th className="p-3 border border-gray-300 text-center">ID</th>
-              <th className="p-3 border border-gray-300 text-center">Name</th>
               <th className="p-3 border border-gray-300 text-center">Email</th>
+              <th className="p-3 border border-gray-300 text-center">Phone</th>
               <th className="p-3 border border-gray-300 text-center">Action</th>
             </tr>
           </thead>
           <tbody>
-            {mockEmployees.map((employee) => (
-              <tr key={employee.id}>
-                <td className="p-3 border border-gray-300 text-center">{employee.id}</td>
-                <td className="p-3 border border-gray-300 text-center">{employee.name}</td>
-                <td className="p-3 border border-gray-300 text-center">{employee.email}</td>
-                <td className="p-3 border border-gray-300 text-center">
-                  <button
-                    onClick={() => handleRemove(employee.id)}
-                    className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white py-2 px-4 rounded-lg hover:opacity-90 transition font-semibold shadow-md cursor-pointer"
-                  >
-                    Delete
-                  </button>
+            {employers.length > 0 ? (
+              employers.map((employer) => (
+                <tr key={employer.employer_id}>
+                  <td className="p-3 border border-gray-300 text-center">{employer.employer_id}</td>
+                  <td className="p-3 border border-gray-300 text-center">{employer.email}</td>
+                  <td className="p-3 border border-gray-300 text-center">{employer.phone}</td>
+                  <td className="p-3 border border-gray-300 text-center">
+                    <button
+                      onClick={() => handleDelete(employer.employer_id)}
+                      className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white py-2 px-4 rounded-lg hover:opacity-90 transition font-semibold shadow-md cursor-pointer"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" className="p-3 border border-gray-300 text-center text-gray-500">
+                  No employers found.
                 </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>
