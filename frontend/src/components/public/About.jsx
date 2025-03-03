@@ -1,9 +1,10 @@
 import React from "react";
+import Footer from "./Footer";
 
 function About() {
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="text-center py-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Who Are We?</h1>
@@ -25,7 +26,9 @@ function About() {
           </div>
         ))}
       </section>
-
+      <div className='mt-6'>
+        <Footer/>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Footer from './Footer';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -27,6 +28,7 @@ function Login() {
   };
 
   return (
+    <div>
     <div className="h-[900px] w-full flex items-center justify-center bg-gray-100 p-4">
       <div className="bg-white rounded-lg shadow-md flex w-full h-full overflow-hidden">
         <div className="w-1/2 hidden md:block">
@@ -77,6 +79,8 @@ function Login() {
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }
