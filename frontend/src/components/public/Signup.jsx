@@ -1,22 +1,4 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-
-function Signup() {
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-    setError('');
-    // Proceed with signup process
-    console.log('Signup Successful');
-=======
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -52,7 +34,6 @@ function Signup() {
     } catch (error) {
       toast.error(error.response ? error.response.data.error : 'An error occurred');
     }
->>>>>>> origin/backendDev
   };
 
   return (
@@ -67,14 +48,7 @@ function Signup() {
         </div>
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-800">Signup</h1>
-<<<<<<< HEAD
-          <form id="signupForm" className="space-y-6 m-8" noValidate onSubmit={handleSubmit}>
-            
-            
-            {/* Email Field */}
-=======
           <form className="space-y-6 m-8" onSubmit={handleSubmit} noValidate>
->>>>>>> origin/backendDev
             <div>
               <label htmlFor="email" className="block text-gray-700 font-medium">Email</label>
               <input 
@@ -120,34 +94,9 @@ function Signup() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm new password" 
                 required 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
-<<<<<<< HEAD
-
-            {/* Confirm Password Field */}
-            <div>
-              <label htmlFor="confirmPassword" className="block text-gray-700 font-medium">Confirm Password</label>
-              <input 
-                type="password" 
-                id="confirmPassword" 
-                name="confirmPassword" 
-                placeholder="Re-enter your password" 
-                required 
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-
-            {/* Error Message */}
-            {error && <p className="text-red-500 text-sm">{error}</p>}
-
-            {/* Submit Button */}
-=======
->>>>>>> origin/backendDev
             <button 
               type="submit" 
               className="mt-5 w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition hover:cursor-pointer"
@@ -155,20 +104,13 @@ function Signup() {
               SIGN UP
             </button>
           </form>
-<<<<<<< HEAD
-
-          {/* Login Link */}
-=======
->>>>>>> origin/backendDev
           <div className="text-center mt-4">
-            <p className="text-gray-600">
-              Already have an Employer's account? 
-              <Link to="/login" className="text-blue-600 font-medium hover:underline"> LOGIN</Link>
-            </p>
+            <p className="text-gray-600">Already have an Employer's account? <Link to="/login" className="text-blue-600 font-medium hover:underline">LOGIN</Link></p>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default Signup;
