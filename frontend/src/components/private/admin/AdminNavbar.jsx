@@ -6,8 +6,8 @@ function AdminNavbar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('admin_email'); // Remove admin_id from localStorage
-    navigate('/admin/login'); // Redirect to login page
+    localStorage.removeItem('admin_email');
+    navigate('/admin/login');
   };
 
   return (

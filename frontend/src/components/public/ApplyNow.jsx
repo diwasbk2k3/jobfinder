@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom"; // Import useLocation
+import { toast } from "react-toastify";
 
 const ApplyNow = () => {
   const location = useLocation(); // Initialize useLocation
@@ -49,7 +50,7 @@ const ApplyNow = () => {
       await axios.post("http://localhost:5000/applicants", formData, {
         headers: { "Content-Type": "application/json" },
       });
-      alert("Application submitted successfully!");
+      toast.success("Application submitted successfully!");
       setFormData({
         job_id: job ? job.job_id : "", 
         job_title: job ? job.job_title : "", 
@@ -63,7 +64,7 @@ const ApplyNow = () => {
 
     } catch (error) {
       console.error("Error submitting application:", error);
-      alert("Failed to submit application.");
+      toast.error("Failed to submit application.");
     } finally {
       setIsSubmitting(false);
     }
