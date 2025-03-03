@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Footer from "./Footer";
 
 const TopJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -48,6 +49,7 @@ const TopJobs = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </section>
   );
 };

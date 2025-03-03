@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ApplyNow = () => {
-  const location = useLocation(); // Initialize useLocation
-  const job = location.state?.job; // Access job details from location.state
+  const location = useLocation(); 
+  const job = location.state?.job;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     job_id: job ? job.job_id : "",
