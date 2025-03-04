@@ -40,8 +40,22 @@ function Navbar() {
             <span>Contact Us</span>
           </Link>
         </li>
+        {/* Mobile Login & Signup */}
+        <li className="md:hidden mt-2">
+          <Link to="/login" className="flex items-center space-x-2 bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-purple-300">
+            <i className="fa-solid fa-user"></i>
+            <span>Login</span>
+          </Link>
+        </li>
+        <li className="md:hidden mt-2">
+          <Link to="/signup" className="flex items-center space-x-2 bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-purple-300">
+            <i className="fa-solid fa-user-plus"></i>
+            <span>Signup</span>
+          </Link>
+        </li>
       </ul>
       
+      {/* Desktop Login & Signup */}
       <div className="hidden md:flex space-x-4">
         <Link to="/login" className="flex items-center space-x-2 bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-purple-300">
           <i className="fa-solid fa-user"></i>

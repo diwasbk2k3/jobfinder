@@ -10,22 +10,10 @@ function AdminNavbar() {
     navigate('/admin/login');
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-4 flex justify-between items-center flex-wrap md:flex-nowrap">
       <div className="text-3xl font-bold text-white">JobFinder</div>
-      
-      {/* Hamburger menu for mobile */}
-      <button 
-        className="md:hidden text-white text-xl focus:outline-none" 
-        onClick={toggleMenu}
-      >
-        ☰
-      </button>
-
       {/* Navbar items */}
       <ul className="text-white flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 items-center md:items-start w-full md:w-auto mt-4 md:mt-0">
         <li>
@@ -33,6 +21,9 @@ function AdminNavbar() {
         </li>
         <li>
           <Link to="/admin/manage-employer" className="hover:text-purple-300">Manage Employer</Link>
+        </li>
+        <li>
+          <Link to="/admin/contacts" className="hover:text-purple-300">Contacts</Link>
         </li>
       </ul>
 

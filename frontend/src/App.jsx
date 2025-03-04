@@ -15,6 +15,7 @@ import AdminLayout from "./components/private/admin/AdminLayout";
 import AdminDashboard from "./components/private/admin/AdminDashboard";
 import ManageEmployer from "./components/private/admin/ManageEmployer";
 import ApplyNow from "./components/public/ApplyNow";
+import Contacts from "./components/private/admin/Contacts";
 
 
 function App() {
@@ -34,18 +35,17 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="admin/login" element={<AdminLogin />} />
         </Route>
-        {/* Employer routes */}
         <Route path="/employer" element={<EmployerLayout/>}>
           <Route index element={<PostNewJobs />} />
           <Route path="post-new-job" element={<PostNewJobs />} />
           <Route path="manage-job" element={<ManageJobs />} />
           <Route path="view-applicant" element={<ViewApplicants />} />
         </Route>
-        {/* Admin routes */}
         <Route path="/admin" element={<AdminLayout/>}>
           <Route index element={<AdminDashboard />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="manage-employer" element={<ManageEmployer />}/>
+          <Route path="contacts" element={<Contacts />}/>
         </Route>
       </Routes>
     </BrowserRouter>
